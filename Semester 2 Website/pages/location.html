@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Home</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, maximum scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+    <meta name='description' content='Lakeside House location information'>
+    <meta name='keywords' content='Lakeside House, guesthouse, killarney, kerry,mucross, location, distance, Killarney national Park, Killarney national Park, The Gap of Dunloe, ross castle'>
+    <meta name='author' content='Darren Moriarty'>
+    <meta name='robots' content='all, index, follow, '>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <link href='../favs/favicon.ico' rel='shortcut icon' type='image/ico'>
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="shortcut icon" href="favs/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" media = "screen and (max-width:900px)"  href="../css/medium.css">
+    
+    <script src="../js/distancecalc.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js">
+
+    </script>
+    <script type="text/javascript">
+
+    function success(position) {
+    document.getElementById ('visitus').style.display = 'block';
+    document.getElementById ('visitus2').style.display = 'block';
+  
+    document.getElementById ('coordlat').innerHTML =  position.coords.latitude;
+    document.getElementById ('coordlong').innerHTML = position.coords.longitude;
+
+    document.getElementById ('coordlat2').innerHTML =  position.coords.latitude;
+    document.getElementById ('coordlong2').innerHTML = position.coords.longitude;
+    
+    document.getElementById ('distance2').innerHTML = getDistanceFromLatLonInKm(52.017721, -9.484598, 
+    position.coords.latitude, position.coords.longitude);
+
+    document.getElementById ('distance').innerHTML = getDistanceFromLatLonInKm(52.017721, -9.484598, 
+    position.coords.latitude, position.coords.longitude);
+    }
+
+      jQuery(document).ready(function() {
+    jQuery('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+ 
+        // Show/Hide Tabs
+        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+ 
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+         });
+   
+
+      });
+
+
+      function getLocation()  
+        {
+         if (navigator.geolocation)
+           {
+           navigator.geolocation.getCurrentPosition(showPosition);
+           }
+         else
+          {
+          document.getElementById("demo").innerHTML="Geolocation is not supported by this browser.";
+                    } 
+        }
+  
+       function showPosition(position)
+       {
+       document.getElementById("demo").innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+              }
+
+
+    </script>
+
+  </head>
+  <body id="top">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <div style="position: fixed;top: 17em;right: 0em;z-index: 7;" class="fb-like" data-href="https://developers.facebook.com/cengagebrain" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+  
+  <div style="position: fixed;top: 15em;right: -5em;z-index: 7;" class="twitter">
+    <a  href="https://twitter.com/share" class="twitter-share-button" data-via="cengagebrain">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+
+  <div class="container">
+
+    <header>
+
+      <a href="../index.html">
+        <img   class="logo" src="../media/images/Untitled-2.png" alt="logo" width="150" height="113">
+        <img   class="logo1" src="../media/images/logo.png" alt="logo" width="300" height="81">
+      </a>
+
+      <nav>
+
+        <ul>
+          <li>
+            <a href="Booking.html" title="about">Booking</a> | 
+          </li>
+          <li>
+            <a href="bedrooms.html">Bedrooms</a> | 
+          <li>
+            <a href="review.html">Reviews</a> |
+          </li>
+          <li>
+            <a href="#">Location</a> | 
+          </li>
+          <li>
+            <a href="contact.html">Contact us</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <div id="menu">
+          <div class="menu-container">
+            <a href="#menu" class="menu-button"><div class="lines"></div></a>
+            <div class="menu">
+              <a href="#"><div class="lines"></div></a>
+              <a href="Booking.html" title="about">Booking</a>
+              <a href="bedrooms.html">Bedrooms</a>
+              <a href="review.html">Reviews</a>
+              <a href="#">Location</a>
+              <a href="contact.html" class="active">Contact us</a>
+            </div>
+          </div>
+        </div>
+
+    </header>
+
+    <div class="main_page">
+
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19624.421148004105!2d-9.52510959667859!3d52.060565088457146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48453c0cb4976ed9%3A0xa00c7a9973174c0!2sKillarney%2C+Co.+Kerry!5e0!3m2!1sen!2sie!4v1458998720276" width="600" height="450"  style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <h1 class="page-name">Location</h1>
+
+    <div class="location-left">
+    <article>
+    <h2>The Perfect Location</h2>
+      
+      <!-- Text sourced from The Hotel Europe -->
+        <p>Kerry, known as Ireland's Kingdom, is a natural playground. There are so many things to do. Hike through the Killarney National Park, walk on sandy    beaches (or surf on the waves!), lunch on the finest Guinness and oysters. We are happy to arrange everything for you to make the most of your stay; golf, sightseeing, walking and hiking, abseiling, rock climbing, kayaking or fishing for wild salmon from the Guesthouse's own private pier.
+            After your day's exploring, wind down with the host of unique complimentary activities that all of our guests enjoy, including pool table, indoor & outdoor vitality pools, heat experiences, Lifestyle showers, Techno Gym & relaxation areas. We also offer complimentary indoor Tennis and Horse riding on site and preferential tee times and fees at Killarney Golf & Fishing Club. Lakeside house is the perfect choice for your break in Kerry.
+            View our Online Brochure about Killarney 
+        </p>
+      </article>
+
+      <h2 style="text-align: center;">Directions</h2>
+
+      <div class="tab-full">
+<!-- code was sourced from http://inspirationalpixels.com/tutorials/creating-tabs-with-html-css-and-jquery -->
+        <div id="full" class="tabs">
+      <ul class="tab-links">
+          <li class="active"><a href="#tab1">Train St.</a></li> 
+          <li><a href="#tab2">Airport</a></li>
+          <li><a href="#tab3" onclick="navigator.geolocation.getCurrentPosition(success)">Location</a></li>
+          <li><a href="#tab4">Cork</a></li>
+      </ul>
+
+        <div class="tab-content">
+            <div id="tab1" class="tab active">
+                <p>Take N22 to Park Rd/R876 in Kerry.  
+                    Head east on Dyke Parade/N22 toward Mardyke St, Turn right onto Mardyke St ,
+                    Turn right onto Western Rd/N22 , Continue straight onto Carrigrohane Rd/N22 , At the roundabout, take the 2nd exit onto N22 , At the roundabout, take the 1st exit and stay on N22 , At the roundabout, take the 2nd exit onto the N22 ramp to Tralee/Killarney/Macroom, Continue onto N22, At the roundabout, take the 2nd exit and stay on N22, At the roundabout, take the 1st exit onto Park Rd/R876
+                </p>
+            </div>
+     
+            <div id="tab2" class="tab">
+                <p>Head northwest toward N23, Turn left onto N23, Turn left onto N22, 
+                  At Cleeney Roundabout, take the 1st exit and stay on N22, 
+                  Turn right onto Upper Lewis Rd, At the roundabout, take the 1st exit onto Lewis Rd/N71
+                </p>
+            </div>
+     
+            <div id="tab3" class="tab">
+               <!--  <button style="margin-left: 4em;" onclick="navigator.geolocation.getCurrentPosition(success);">Distance</button>
+ -->
+                <p id="visitus">
+                <p>You are currently <span id="distance">0</span> miles away from our guesthouse. Please come
+                and visit!</p>
+                 <p>Your current lat is:<span id="coordlat">0</span>
+                Your current long is:<span id="coordlong">0</span></p>
+                
+            </div>
+     
+            <div id="tab4" class="tab">
+                <p>Take N22 to Park Rd/R876 in Kerry.  
+                  Head east on Dyke Parade/N22 toward Mardyke St, Turn right onto Mardyke St ,
+                  Turn right onto Western Rd/N22 , Continue straight onto Carrigrohane Rd/N22 , At the roundabout, take the 2nd exit onto N22 , At the roundabout, take the 1st exit and stay on N22 , At the roundabout, take the 2nd exit onto the N22 ramp to Tralee/Killarney/Macroom, Continue onto N22, At the roundabout, take the 2nd exit and stay on N22, At the roundabout, take the 1st exit onto Park Rd/R876
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+    <div class="location-right">
+
+      <div class="park">
+        <h1>Visitors Guide</h1>
+
+        <div  class="location-pics" ><!-- http://www.thedunloe.com/ -->
+          <img src="../media/images/thedunloe-killarney-national-park3.jpg" alt="national-park" >
+        </div>
+        <a class="links" href="http://www.killarneynationalpark.ie/"> <h2>Killarney national Park</h2></a>
+        <!-- http://www.thedunloe.com/killarney-national-park -->
+        <p>
+          Ireland's first National Park lies to the south and west of Killarney town at the foot of Ireland's highest mountain range, The MacGillycuddy's Reeks.  Killarney National Park contains the most extensive areas of natural woodland remaining in Ireland.
+        </p>
+        
+
+        <div  class="location-pics" >
+          <img src="../media/images/Gap_of_Dunloe,_facing_South.jpg" alt="national-park">
+        </div>
+        <!-- http://www.packyabags.com/?holiday_locations=europe -->
+        <a class="links" href="https://en.wikipedia.org/wiki/Gap_of_Dunloe"> <h2>The Gap of Dunloe</h2></a>
+       <!--  https://en.wikipedia.org/wiki/Gap_of_Dunloe -->
+        <p>The Gap has long been a popular tourist attraction. The road through it is narrow, winding and is difficult for larger vehicles. A popular form of transport for tourists is the horse-drawn trap, a cart where up to four occupants sit facing each other. There are also riding ponies for hire. The trap and ponies are guided by men from families that live in and around the Gap.
+        </p>
+        
+
+        <div  class="location-pics" ><!-- https://www.flickr.com/photos/dorameulman/8396544446 -->
+          <img src="../media/images/muckrosshouse-1-1-of-1.jpg" alt="national-park">
+        </div>
+        
+        <a class="links" href="http://www.muckross-house.ie/"> <h2>Muckross House</h2></a>
+        <!-- www.heritageireland.ie -->
+        <p>Within Killarney National Park is Muckross House   a magnificent Victorian mansion and one of Ireland s leading stately homes. The elegantly furnished rooms portray the lifestyles of the landed gentry, while downstairs in the basement one can experience the working conditions of the servants employed in the House.</p>
+
+
+        <div  class="location-pics" >
+          <img src="../media/images/Killarney-2.jpg" alt="national-park">
+        </div>
+        <!-- http://www.paisrelativo.net/5-ciudades-que-no-te-puedes-perder-cuando-visites-irlanda/ -->
+        <a class="links" href="http://www.killarneynationalpark.ie/ross%20castle/ross%20castle.htm"> <h2>Ross Castle</h2></a>
+        <!-- http://www.killarneynationalpark.ie/ross%20castle/ross%20castle.htm -->
+        <p>Ross Castle sits on the edge of Killarney's lower lake and was built by O'Donoghue Mór in the 15th century. The Castle came into the hands of the Brownes who became the Earls of Kenmare and owned an extensive portion of the lands that are now part of Killarney National Park .
+        </p>
+      </div>
+
+    </div>
+<!-- code was sourced from http://inspirationalpixels.com/tutorials/creating-tabs-with-html-css-and-jquery -->
+      <div id="mobile" class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab5">Train St.</a></li> 
+        <li><a href="#tab6">Airport</a></li>
+        <li><a href="#tab7" onclick="navigator.geolocation.getCurrentPosition(success)">Location</a></li>
+        <li><a href="#tab8">Cork</a></li>
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab5" class="tab active">
+        <!-- All directions taken from Google Maps -->
+            <p>Take N22 to Park Rd/R876 in Kerry.  
+                Head east on Dyke Parade/N22 toward Mardyke St, Turn right onto Mardyke St ,
+                Turn right onto Western Rd/N22 , Continue straight onto Carrigrohane Rd/N22 , At the roundabout, take the 2nd exit onto N22 , At the roundabout, take the 1st exit and stay on N22 , At the roundabout, take the 2nd exit onto the N22 ramp to Tralee/Killarney/Macroom, Continue onto N22, At the roundabout, take the 2nd exit and stay on N22, At the roundabout, take the 1st exit onto Park Rd/R876
+            </p>
+        </div>
+ 
+        <div id="tab6" class="tab">
+            <p>Head northwest toward N23, Turn left onto N23, Turn left onto N22, 
+              At Cleeney Roundabout, take the 1st exit and stay on N22, 
+              Turn right onto Upper Lewis Rd, At the roundabout, take the 1st exit onto Lewis Rd/N71
+            </p>
+        </div>
+ 
+        <div id="tab7" class="tab">
+               <!--  <button style="margin-left: 4em;" onclick="navigator.geolocation.getCurrentPosition(success);">Distance</button>
+ -->
+                <p id="visitus2">
+                <p>You are currently <span id="distance2">0</span> miles away from our guesthouse. Please come
+                and visit!</p>
+                 <p>Your current lat is:<span id="coordlat2">0</span>
+                Your current long is:<span id="coordlong2">0</span></p>
+                
+        </div>
+ 
+        <div id="tab8" class="tab">
+            <p>Take N22 to Park Rd/R876 in Kerry.  
+              Head east on Dyke Parade/N22 toward Mardyke St, Turn right onto Mardyke St ,
+              Turn right onto Western Rd/N22 , Continue straight onto Carrigrohane Rd/N22 , At the roundabout, take the 2nd exit onto N22 , At the roundabout, take the 1st exit and stay on N22 , At the roundabout, take the 2nd exit onto the N22 ramp to Tralee/Killarney/Macroom, Continue onto N22, At the roundabout, take the 2nd exit and stay on N22, At the roundabout, take the 1st exit onto Park Rd/R876
+            </p>
+        </div>
+      </div>
+    
+      
+    </div>
+
+
+
+      <footer>
+
+      <a href="#top"><i class="fa fa-chevron-circle-up" id="back-to-top"></i></a>
+      <div class="btt">
+        Back To Top
+      </div>
+
+        <div class="navi-foot">
+          <h3>Navigation</h3>
+            <ul>
+              <li>
+                <a href="../index.html">Home |</a>
+              </li>
+              <li>
+                <a href="Booking.html" title="about">Booking</a> | 
+              </li>
+              <li>
+                <a href="bedrooms.html">Bedrooms</a> | 
+              </li>
+              <li>
+                <a href="review.html">Reviews</a> |
+              </li>
+              <li>
+                <a href="location.html">Location</a> | 
+              </li>
+              <li>
+                <a href="contact.html">Contact us</a>
+              </li>
+            </ul>
+        </div>
+
+        <div class="contact" >
+          <h2>Contact</h2>
+          &copy; Darren Moriarty<br>Lakeside House<br>&#x260E; Tel: (064) 7223238<br>
+          Email <a id="email" href="Darren.M.Moriarty@students.ittralee.ie"> Reservations@lakesidehouse.ie</a> 
+        </div>
+
+        <div class="social">
+          <h2>Social</h2>
+          <a href="https://plus.google.com/">
+            <i class="fa fa-google-plus" style="font-size:36px"></i><!-- 
+             <img src="media/images/google-web.png" title="Google+" alt="google+" width="50" height="50"> -->
+          </a>
+          
+          <a href="https://facebook.com/">
+            <i class="fa fa-facebook-official" style="font-size:36px"></i>
+             <!-- <img src="media/images/facebook-web.png" title="Facebook" alt="facebook" width="50" height="50">
+         -->  </a>
+          <a href="https://twitter.com/">
+          <i class="fa fa-twitter" style="font-size:36px"></i><!-- 
+             <img src="media/images/twitter-web.png" title="Twitter" alt="twitter" width="50" height="50"> -->
+          </a>
+          <a href="https://instagram.com/">
+            <i class="fa fa-instagram" style="font-size:36px"></i><!-- 
+             <img src="media/images/instagram-web.png" title="Instagram" alt="instagram" width="50" height="50"> -->
+          </a>
+          <a href="https://tripadvisor.ie/">
+          <i class="fa fa-tripadvisor" style="font-size:36px"></i><!-- 
+             <img src="media/images/trip-web.png" title="Trip_Advisor" alt="tripadvisor" width="50" height="50"> -->
+          </a>
+        </div>
+
+        <div class="bbIreland">
+          <img src="../media/images/256x160_Approved-Failte-Ireland-Logos_PNGb&w.png" alt="failte">
+          <br>Approved by B&B Ireland.
+        </div>
+
+    </footer>
+
+    </div>
+
+   <!--  </div> end of background container-->
+
+    </div>
+
+  </body>
+</html>
